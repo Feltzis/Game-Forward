@@ -1,0 +1,586 @@
+/* ==========================================================================
+   Game Forward - Home, About, and Profile pages
+   Built from the Figma frames (755px wide designs).
+   All sizes use --u, which equals 1 design pixel scaled to the phone width,
+   so the layout matches the mockup at any screen size.
+   ========================================================================== */
+
+:root {
+  --primary-blue: #9f96fd;
+  --secondary-blue: #cdc9fd;
+  --tertiary: #d9d9d9;
+  --button-hover: #4c4b4b;
+  --black-text: #000;
+  --page-bg: #171212;
+
+  /* About page colors */
+  --yellow-primary: #e9e595;
+  --yellow-secondary: #fcfad1;
+
+  /* Profile page colors */
+  --red-primary: #ae5267;
+  --red-secondary: #fdbccb;
+  --white-text: #fff;
+
+  --font-title: "Life Savers", Georgia, serif;
+  --font-body: "LXGW WenKai Mono TC", "Courier New", monospace;
+  --font-button: "Love Ya Like A Sister", "Comic Sans MS", cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: var(--page-bg);
+  color: var(--black-text);
+  font-family: var(--font-body);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Holds the reusable symbol shapes. It takes up no space on the page. */
+.symbol-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* ---------- Phone frame ---------- */
+
+.phone {
+  container-type: inline-size;
+  width: 100%;
+  max-width: 480px;
+}
+
+.screen {
+  --u: calc(100cqw / 755);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: clip;
+  background: var(--primary-blue);
+}
+
+@media (min-width: 520px) {
+  .screen {
+    border-radius: calc(var(--u) * 25);
+  }
+}
+
+/* ---------- Background symbols ---------- */
+
+.cluster {
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 755 / 640;
+  pointer-events: none;
+}
+
+.cluster--hero     { top: calc(var(--u) * 291); }
+.cluster--signup   { top: calc(var(--u) * 948); }
+.cluster--trending { top: calc(var(--u) * 1592); }
+
+/* About page has six symbol clusters */
+.cluster--about-1 { top: calc(var(--u) * 291); }
+.cluster--about-2 { top: calc(var(--u) * 948); }
+.cluster--about-3 { top: calc(var(--u) * 1592); }
+.cluster--about-4 { top: calc(var(--u) * 2259); }
+.cluster--about-5 { top: calc(var(--u) * 2901); }
+.cluster--about-6 { top: calc(var(--u) * 3545); }
+
+/* Profile page has four symbol clusters (the last one is cut off by the screen) */
+.cluster--profile-1 { top: calc(var(--u) * 291); }
+.cluster--profile-2 { top: calc(var(--u) * 948); }
+.cluster--profile-3 { top: calc(var(--u) * 1592); }
+.cluster--profile-4 { top: calc(var(--u) * 2294); }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: relative;
+  z-index: 1;
+  padding-top: calc(var(--u) * 233);
+}
+
+.logo {
+  position: absolute;
+  top: calc(var(--u) * -37);
+  left: 0;
+  display: block;
+  width: calc(var(--u) * 375);
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.profile-link {
+  position: absolute;
+  top: calc(var(--u) * 44);
+  right: calc(var(--u) * 26);
+  display: block;
+  width: calc(var(--u) * 142);
+  border-radius: 50%;
+}
+
+.profile-link svg,
+.profile-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  margin: 0;
+  padding-inline: calc(var(--u) * 60);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 96);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ---------- Main content ---------- */
+
+main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding-bottom: calc(var(--u) * 46);
+}
+
+.intro {
+  width: calc(var(--u) * 608);
+  max-width: 100%;
+  margin: calc(var(--u) * 87) auto 0;
+  font-weight: 700;
+  font-size: calc(var(--u) * 48);
+  line-height: 1.15;
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 75);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ---------- Sign-up ---------- */
+
+.signup {
+  margin-top: calc(var(--u) * 147);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--u) * 66);
+  margin-top: calc(var(--u) * 32);
+}
+
+.field {
+  width: calc(var(--u) * 578);
+  max-width: 100%;
+}
+
+.field input,
+.field textarea {
+  display: block;
+  width: 100%;
+  height: calc(var(--u) * 88);
+  padding: 0 calc(var(--u) * 26);
+  border: 0;
+  border-radius: calc(var(--u) * 25);
+  background: var(--tertiary);
+  color: var(--black-text);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 40);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--button-hover);
+  opacity: 1;
+}
+
+.create-button,
+.send-button,
+.edit-button {
+  width: calc(var(--u) * 247);
+  height: calc(var(--u) * 101);
+  border: 0;
+  border-radius: calc(var(--u) * 25);
+  background: var(--tertiary);
+  color: var(--black-text);
+  font-family: var(--font-button);
+  font-size: calc(var(--u) * 64);
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.create-button:hover,
+.send-button:hover,
+.edit-button:hover {
+  background: var(--button-hover);
+  color: var(--tertiary);
+}
+
+/* ---------- Trending games ---------- */
+
+.trending {
+  margin-top: calc(var(--u) * 114);
+}
+
+.trending h2 {
+  width: calc(var(--u) * 332);
+  margin-inline: auto;
+}
+
+.covers {
+  display: flex;
+  justify-content: space-between;
+  margin: calc(var(--u) * 55) 0 0;
+  padding: 0 calc(var(--u) * 33) 0 calc(var(--u) * 26);
+  list-style: none;
+}
+
+.cover {
+  height: calc(var(--u) * 365);
+}
+
+.cover--rdr2 { width: calc(var(--u) * 302); }
+.cover--acod { width: calc(var(--u) * 286); }
+
+.cover a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: calc(var(--u) * 25);
+  background: var(--secondary-blue); /* shows if an image is missing */
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* "Add Rating" layer that sits on top of the cover. Hidden until hover or keyboard focus. */
+.cover-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  padding-bottom: calc(var(--u) * 24);
+  background: rgba(76, 75, 75, 0.65);
+  color: var(--white-text);
+  font-family: var(--font-button);
+  font-size: calc(var(--u) * 40);
+  text-shadow:
+    -2px -2px 0 var(--black-text),
+    2px -2px 0 var(--black-text),
+    -2px 2px 0 var(--black-text),
+    2px 2px 0 var(--black-text);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.cover a:hover .cover-hover,
+.cover a:focus-visible .cover-hover {
+  opacity: 1;
+}
+
+/* ---------- Navigation bar ---------- */
+
+.nav {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  height: calc(var(--u) * 91);
+  margin-top: auto;
+  overflow: hidden;
+  border-radius: calc(var(--u) * 25) calc(var(--u) * 25) 0 0;
+  background: var(--secondary-blue);
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0;
+  padding: calc(var(--u) * 14) calc(var(--u) * 26) 0;
+  list-style: none;
+}
+
+.nav a {
+  display: block;
+  padding: calc(var(--u) * 10) calc(var(--u) * 6);
+  color: var(--black-text);
+  font-family: var(--font-button);
+  font-size: calc(var(--u) * 40);
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}
+
+/* ---------- About page ---------- */
+
+/* Yellow version of the page and nav bar */
+.screen--about {
+  background: var(--yellow-primary);
+}
+
+.nav--about {
+  background: var(--yellow-secondary);
+}
+
+.about-photo {
+  display: block;
+  width: calc(var(--u) * 401);
+  height: calc(var(--u) * 411);
+  margin: calc(var(--u) * 55) auto 0;
+  border-radius: calc(var(--u) * 71);
+  object-fit: cover;
+}
+
+/* Uses the same look as .intro, with different spacing */
+.intro--about {
+  margin-top: calc(var(--u) * 54);
+  line-height: 1.2;
+}
+
+/* ---------- Contact form ---------- */
+
+.contact {
+  margin-top: calc(var(--u) * 134);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--u) * 66);
+  margin-top: calc(var(--u) * 72);
+}
+
+.field textarea {
+  height: calc(var(--u) * 245);
+  padding: calc(var(--u) * 15) calc(var(--u) * 26);
+  resize: none;
+}
+
+/* ---------- Cites ---------- */
+
+.cites {
+  margin-top: calc(var(--u) * 106);
+}
+
+.cite-list {
+  width: calc(var(--u) * 598);
+  max-width: 100%;
+  margin: calc(var(--u) * 67) auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 40);
+  line-height: 1.2;
+}
+
+.cite-list a {
+  color: var(--black-text);
+}
+
+.cite-list a:hover {
+  color: var(--button-hover);
+}
+
+/* ---------- Profile page ---------- */
+
+/* Red version of the page and nav bar */
+.screen--profile {
+  overflow: clip; /* hides the part of the last symbol cluster that hangs off the bottom */
+  background: var(--red-primary);
+}
+
+.nav--profile {
+  background: var(--red-secondary);
+}
+
+.main--profile {
+  padding-bottom: calc(var(--u) * 68);
+}
+
+.avatar-large {
+  display: block;
+  width: calc(var(--u) * 243);
+  height: auto;
+  margin: calc(var(--u) * 51) auto 0;
+}
+
+.username {
+  margin-top: calc(var(--u) * 43);
+}
+
+/* Uses the same look as .intro, with different spacing */
+.intro--profile {
+  margin-top: calc(var(--u) * 33);
+}
+
+.edit-button {
+  display: block;
+  width: calc(var(--u) * 409);
+  height: calc(var(--u) * 87);
+  margin: calc(var(--u) * 52) auto 0;
+}
+
+.genres {
+  margin-top: calc(var(--u) * 121);
+}
+
+.genre-list {
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--u) * 27);
+  margin: calc(var(--u) * 70) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.genre {
+  padding: 0 calc(var(--u) * 12);
+  border-radius: calc(var(--u) * 25);
+  background: var(--red-secondary);
+  font-family: var(--font-button);
+  font-size: calc(var(--u) * 64);
+  line-height: calc(var(--u) * 74);
+}
+
+.top-games {
+  margin-top: calc(var(--u) * 102);
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(var(--u) * 37) calc(var(--u) * 53);
+  width: calc(var(--u) * 665);
+  max-width: 100%;
+  margin: calc(var(--u) * 83) auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.game {
+  width: calc(var(--u) * 306);
+  height: calc(var(--u) * 303);
+}
+
+.game a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: calc(var(--u) * 50);
+  background: var(--red-secondary); /* shows if an image is missing */
+}
+
+.game img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* "View Rating" layer that sits on top of the cover. Hidden until hover. */
+.game-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(76, 75, 75, 0.65);
+  color: var(--white-text);
+  font-family: var(--font-button);
+  font-size: calc(var(--u) * 45);
+  text-shadow:
+    -2px -2px 0 var(--black-text),
+    2px -2px 0 var(--black-text),
+    -2px 2px 0 var(--black-text),
+    2px 2px 0 var(--black-text);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.game a:hover .game-hover,
+.game a:focus-visible .game-hover {
+  opacity: 1;
+}
+
+/* ---------- Focus + motion ---------- */
+
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--black-text);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

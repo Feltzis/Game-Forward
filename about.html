@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Game Forward</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@800&family=LXGW+WenKai+Mono+TC:wght@700&family=Love+Ya+Like+A+Sister&family=Madimi+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Reusable PlayStation-style symbol cluster (triangle, square, circle, X) used as background decoration -->
+  <svg class="symbol-sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="symbol-cluster" viewBox="0 0 755 640">
+        <g fill="none" stroke="#fcfad1" stroke-width="30" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M375 22 L470 190 H280 Z"/>
+          <rect x="58.5" y="215.5" width="165" height="165" rx="12"/>
+          <circle cx="599" cy="298" r="95"/>
+        </g>
+        <text x="366.5" y="560" text-anchor="middle" font-family="'Madimi One', sans-serif" font-size="250" fill="#fcfad1">X</text>
+      </symbol>
+    </defs>
+  </svg>
+  <div class="phone">
+    <div class="screen screen--about">
+
+      <!-- Background symbols (same cluster repeated six times) -->
+      <svg class="cluster cluster--about-1" aria-hidden="true" focusable="false"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--about-2" aria-hidden="true" focusable="false"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--about-3" aria-hidden="true" focusable="false"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--about-4" aria-hidden="true" focusable="false"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--about-5" aria-hidden="true" focusable="false"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--about-6" aria-hidden="true" focusable="false"><use href="#symbol-cluster"/></svg>
+
+      <header class="site-header">
+        <a class="logo" href="index.html">
+          <img src="assets/swords.png" alt="Game Forward logo: two crossed swords">
+        </a>
+        <a class="profile-link" href="profile.html">
+          <svg viewBox="0 0 142 140" aria-hidden="true" focusable="false">
+            <defs>
+              <clipPath id="avatar-clip"><circle cx="71" cy="70" r="68"/></clipPath>
+            </defs>
+            <circle cx="71" cy="70" r="68" fill="#d9d9d9" stroke="#000" stroke-width="2"/>
+            <g clip-path="url(#avatar-clip)" fill="#fcfad1" stroke="#000" stroke-width="2">
+              <ellipse cx="71.5" cy="45" rx="20.5" ry="25"/>
+              <rect x="40" y="88" width="63" height="60" rx="25"/>
+            </g>
+          </svg>
+        </a>
+        <h1>About</h1>
+      </header>
+
+      <main>
+        <section class="about-me">
+          <img class="about-photo" src="assets/IMG_8239_1.png" alt="Belle">
+          <p class="intro intro--about">
+            Hi, my name is Belle and I am currently a senior at UW-Milwaukee. I made a wireframe in a past class for an imaginary platform about rating video games, and I decided to expand on that idea by adding the aspect of connecting with others. Game Forward draws inspiration from Letterboxd and IGN’s rating functions and the way users can share opinions with a community of like minded media consumers.
+          </p>
+        </section>
+
+        <section class="contact">
+          <h2>Contact Us</h2>
+          <form class="contact-form">
+            <div class="field">
+              <input type="email" placeholder="Email">
+            </div>
+            <div class="field">
+              <textarea placeholder="Message..."></textarea>
+            </div>
+            <button class="send-button" type="submit">Send</button>
+          </form>
+        </section>
+
+        <section class="cites">
+          <h2>Cites</h2>
+          <ul class="cite-list">
+            <li><a href="https://en.wikipedia.org/wiki/Red_Dead_Redemption_2#Gameplay">Red Dead Redemption 2 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Assassin%27s_Creed_Odyssey">Assassin's Creed Odyssey - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Red_Dead_Redemption">Red Dead Redemption - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Halo:_Reach">Halo: Reach - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Borderlands_2">Borderlands 2 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Fallout:_New_Vegas">Fallout: New Vegas - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Call_of_Duty:_Black_Ops">Call of Duty: Black Ops - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Borderlands_(video_game)">Borderlands (video game) - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Halo_3">Halo 3 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/The_Elder_Scrolls_V:_Skyrim">The Elder Scrolls V: Skyrim - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Gears_of_War_(video_game)">Gears of War (video game) - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Fallout_4">Fallout 4 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Call_of_Duty:_Modern_Warfare_3_(2011_video_game)">Call of Duty: Modern Warfare 3 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Borderlands_4">Borderlands 4 - Wikipedia</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Fallout_3">Fallout 3 - Wikipedia</a></li>
+          </ul>
+        </section>
+      </main>
+
+      <nav class="nav nav--about">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="rating.html">Ratings</a></li>
+          <li><a href="social.html">Social</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</body>
+</html>

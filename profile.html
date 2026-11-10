@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile | Game Forward</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&family=LXGW+WenKai+Mono+TC:wght@700&family=Love+Ya+Like+A+Sister&family=Madimi+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Reusable symbol cluster (triangle, square, circle, X) used as background decoration. Pink version for the Profile page. -->
+  <svg class="symbol-defs">
+    <defs>
+      <symbol id="symbol-cluster" viewBox="0 0 755 640">
+        <g fill="none" stroke="#fdbccb" stroke-width="30" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M375 22 L470 190 H280 Z"/>
+          <rect x="58.5" y="215.5" width="165" height="165" rx="12"/>
+          <circle cx="599" cy="298" r="95"/>
+        </g>
+        <text x="366.5" y="560" text-anchor="middle" font-family="'Madimi One', sans-serif" font-size="250" fill="#fdbccb">X</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="phone">
+    <div class="screen screen--profile">
+
+      <!-- Decorative background symbols (one cluster behind each section) -->
+      <svg class="cluster cluster--profile-1"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--profile-2"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--profile-3"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--profile-4"><use href="#symbol-cluster"/></svg>
+
+      <header class="site-header">
+        <a class="logo" href="index.html">
+          <img src="assets/swords.png" alt="Game Forward logo: two crossed swords">
+        </a>
+
+        <!-- Small profile icon in the top right corner -->
+        <a class="profile-link" href="profile.html">
+          <span class="visually-hidden">Your profile</span>
+          <svg viewBox="0 0 142 140">
+            <defs>
+              <clipPath id="avatar-clip"><circle cx="71" cy="70" r="68"/></clipPath>
+            </defs>
+            <circle cx="71" cy="70" r="68" fill="#d9d9d9" stroke="#000" stroke-width="2"/>
+            <g clip-path="url(#avatar-clip)" fill="#fdbccb" stroke="#000" stroke-width="2">
+              <ellipse cx="71.5" cy="45" rx="20.5" ry="25"/>
+              <rect x="40" y="88" width="63" height="60" rx="25"/>
+            </g>
+          </svg>
+        </a>
+
+        <h1>Profile</h1>
+      </header>
+
+      <main class="main--profile">
+
+        <!-- Large profile picture -->
+        <svg class="avatar-large" viewBox="0 0 243 241">
+          <defs>
+            <clipPath id="avatar-large-clip"><circle cx="121.5" cy="120.5" r="119.5"/></clipPath>
+          </defs>
+          <circle cx="121.5" cy="120.5" r="119.5" fill="#d9d9d9" stroke="#000" stroke-width="2"/>
+          <g clip-path="url(#avatar-large-clip)" stroke="#000" stroke-width="2">
+            <ellipse cx="122" cy="77" rx="35" ry="43" fill="#ae5267"/>
+            <rect x="68" y="151" width="108" height="100" rx="50" fill="#ae5267"/>
+          </g>
+        </svg>
+
+        <h2 class="username">Username</h2>
+
+        <p class="intro intro--profile">
+          Original account bio talking about the user and their interests.
+        </p>
+
+        <button class="edit-button" type="button">Edit Profile</button>
+
+        <section class="genres">
+          <h2>Top Genres</h2>
+          <ul class="genre-list">
+            <li class="genre">RPG</li>
+            <li class="genre">Adventure</li>
+            <li class="genre">FPS</li>
+          </ul>
+        </section>
+
+        <section class="top-games">
+          <h2>Top Games</h2>
+          <ul class="game-list">
+            <li class="game">
+              <a href="rating.html">
+                <img src="assets/red-dead-redemption.png" alt="Red Dead Redemption cover art">
+                <span class="game-hover">View Rating</span>
+              </a>
+            </li>
+            <li class="game">
+              <a href="rating.html">
+                <img src="assets/halo-reach.png" alt="Halo Reach cover art">
+                <span class="game-hover">View Rating</span>
+              </a>
+            </li>
+            <li class="game">
+              <a href="rating.html">
+                <img src="assets/borderlands-2.png" alt="Borderlands 2 cover art">
+                <span class="game-hover">View Rating</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <nav class="nav nav--profile">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="rating.html">Ratings</a></li>
+          <li><a href="social.html">Social</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>
