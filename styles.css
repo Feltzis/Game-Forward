@@ -5,6 +5,13 @@
    so the layout matches the mockup at any screen size.
    ========================================================================== */
 
+/* Holds the shared symbol cluster drawing; takes up no space */
+.symbol-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
 :root {
   --primary-blue: #9f96fd;
   --secondary-blue: #cdc9fd;
@@ -20,7 +27,7 @@
   /* Profile page colors */
   --red-primary: #ae5267;
   --red-secondary: #fdbccb;
-  --white-text: #fff;
+  --white-text: #d9d9d9;
 
   --font-title: "Life Savers", Georgia, serif;
   --font-body: "LXGW WenKai Mono TC", "Courier New", monospace;
@@ -365,8 +372,8 @@ h2 {
 }
 
 .nav a:hover {
-  color: var(--button-hover);
-  text-decoration: underline;
+  color: var(--white-text);
+  text-shadow: 0 0 10px rgb(0,0,0);
 }
 
 /* ---------- About page ---------- */
