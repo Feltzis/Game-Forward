@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social | Game Forward</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&family=LXGW+WenKai+Mono+TC:wght@700&family=Love+Ya+Like+A+Sister&family=Madimi+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- PlayStation symbols (triangle, square, circle, X) drawn once, then reused as the background -->
+  <svg class="symbol-defs">
+    <defs>
+      <symbol id="symbol-cluster" viewBox="0 0 755 640">
+        <g fill="none" stroke="#fcfad1" stroke-width="30" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M375 22 L470 190 H280 Z"/>
+          <rect x="58.5" y="215.5" width="165" height="165" rx="12"/>
+          <circle cx="599" cy="298" r="95"/>
+        </g>
+        <text x="366.5" y="560" text-anchor="middle" font-family="'Madimi One', sans-serif" font-size="250" fill="#fcfad1">X</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="phone">
+    <div class="screen screen--social">
+
+      <!-- Background symbols: one cluster behind each stretch of the page -->
+      <svg class="cluster cluster--social-1"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--social-2"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--social-3"><use href="#symbol-cluster"/></svg>
+
+      <header class="site-header">
+        <a class="logo" href="index.html">
+          <img src="assets/swords.png" alt="Game Forward logo: two crossed swords">
+        </a>
+
+        <a class="profile-link" href="profile.html">
+          <span class="visually-hidden">Your profile</span>
+          <svg viewBox="0 0 142 140">
+            <defs>
+              <clipPath id="avatar-clip"><circle cx="71" cy="70" r="68"/></clipPath>
+            </defs>
+            <circle cx="71" cy="70" r="68" fill="#d9d9d9" stroke="#000" stroke-width="2"/>
+            <g clip-path="url(#avatar-clip)" fill="#fcfad1" stroke="#000" stroke-width="2">
+              <ellipse cx="71.5" cy="45" rx="20.5" ry="25"/>
+              <rect x="40" y="88" width="63" height="60" rx="25"/>
+            </g>
+          </svg>
+        </a>
+
+        <h1>Social</h1>
+      </header>
+
+      <main class="main--social">
+
+        <!-- Search bar (same style as the Ratings page) -->
+        <label class="search">
+          <span class="visually-hidden">Search users</span>
+          <input class="search-input" type="text" placeholder="Search">
+        </label>
+
+        <!-- Recommended friends, highest match first -->
+        <ul class="friend-list">
+
+          <li class="friend">
+            <img class="friend-avatar" src="assets/illustration-burger.png" alt="Burg's profile picture">
+            <p class="friend-name">Burg</p>
+            <div class="friend-actions">
+              <label class="add-friend">
+                <input class="add-friend-input" type="checkbox">
+                <span class="add-friend-idle">+</span>
+                <span class="add-friend-done">✓</span>
+                <span class="visually-hidden">Add friend</span>
+              </label>
+              <button class="message-button">
+                <span class="visually-hidden">Message</span>...
+              </button>
+            </div>
+            <p class="match">90% Match</p>
+          </li>
+
+          <li class="friend">
+            <img class="friend-avatar" src="assets/illustration-pumpkin.png" alt="Jack's profile picture">
+            <p class="friend-name">Jack</p>
+            <div class="friend-actions">
+              <label class="add-friend">
+                <input class="add-friend-input" type="checkbox">
+                <span class="add-friend-idle">+</span>
+                <span class="add-friend-done">✓</span>
+                <span class="visually-hidden">Add friend</span>
+              </label>
+              <button class="message-button">
+                <span class="visually-hidden">Message</span>...
+              </button>
+            </div>
+            <p class="match">87% Match</p>
+          </li>
+
+          <li class="friend">
+            <img class="friend-avatar" src="assets/illustration-retro-tv.png" alt="TV's profile picture">
+            <p class="friend-name">TV</p>
+            <div class="friend-actions">
+              <label class="add-friend">
+                <input class="add-friend-input" type="checkbox">
+                <span class="add-friend-idle">+</span>
+                <span class="add-friend-done">✓</span>
+                <span class="visually-hidden">Add friend</span>
+              </label>
+              <button class="message-button">
+                <span class="visually-hidden">Message</span>...
+              </button>
+            </div>
+            <p class="match">85% Match</p>
+          </li>
+
+          <li class="friend">
+            <img class="friend-avatar" src="assets/illustration-gamingconsole.png" alt="Game's profile picture">
+            <p class="friend-name">Game</p>
+            <div class="friend-actions">
+              <label class="add-friend">
+                <input class="add-friend-input" type="checkbox">
+                <span class="add-friend-idle">+</span>
+                <span class="add-friend-done">✓</span>
+                <span class="visually-hidden">Add friend</span>
+              </label>
+              <button class="message-button">
+                <span class="visually-hidden">Message</span>...
+              </button>
+            </div>
+            <p class="match">78% Match</p>
+          </li>
+
+          <li class="friend">
+            <img class="friend-avatar" src="assets/illustration-pc.png" alt="Mac's profile picture">
+            <p class="friend-name">Mac</p>
+            <div class="friend-actions">
+              <label class="add-friend">
+                <input class="add-friend-input" type="checkbox">
+                <span class="add-friend-idle">+</span>
+                <span class="add-friend-done">✓</span>
+                <span class="visually-hidden">Add friend</span>
+              </label>
+              <button class="message-button">
+                <span class="visually-hidden">Message</span>...
+              </button>
+            </div>
+            <p class="match">60% Match</p>
+          </li>
+
+        </ul>
+
+      </main>
+
+      <nav class="nav nav--social">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="ratings.html">Ratings</a></li>
+          <li><a href="social.html">Social</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

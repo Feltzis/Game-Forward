@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Game Forward - Home, About, Profile, and Feed pages
+   Game Forward - Home, About, Profile, Feed, Ratings, and Social pages
    Built from the Figma frames (755px wide designs).
    All sizes use --u, which equals 1 design pixel scaled to the phone width,
    so the layout matches the mockup at any screen size.
@@ -144,6 +144,16 @@ body {
 .cluster--feed-7 { top: calc(var(--u) * 4186); }
 .cluster--feed-8 { top: calc(var(--u) * 4843); }
 .cluster--feed-9 { top: calc(var(--u) * 5487); }
+
+/* Ratings page has eight symbol clusters */
+.cluster--ratings-1 { top: calc(var(--u) * 291); }
+.cluster--ratings-2 { top: calc(var(--u) * 948); }
+.cluster--ratings-3 { top: calc(var(--u) * 1592); }
+.cluster--ratings-4 { top: calc(var(--u) * 2243); }
+.cluster--ratings-5 { top: calc(var(--u) * 2900); }
+.cluster--ratings-6 { top: calc(var(--u) * 3544); }
+.cluster--ratings-7 { top: calc(var(--u) * 4186); }
+.cluster--ratings-8 { top: calc(var(--u) * 4843); }
 
 /* ---------- Header ---------- */
 
@@ -386,7 +396,11 @@ h2 {
 
 .nav a:hover {
   color: var(--white-text);
-  text-shadow: 0 0 10px rgb(0,0,0);
+  text-shadow:
+    -2px -2px 0 var(--black-text),
+    2px -2px 0 var(--black-text),
+    -2px 2px 0 var(--black-text),
+    2px 2px 0 var(--black-text);
 }
 
 /* ---------- About page ---------- */
@@ -657,6 +671,8 @@ h2 {
   width: calc(var(--u) * 105);
   height: calc(var(--u) * 105);
   border-radius: 50%;
+  margin: 4px;
+  box-shadow: 0 0 0 2px var(--black-text);
 }
 
 .poster-name {
@@ -681,7 +697,7 @@ h2 {
   color: var(--black-text);
   font-family: var(--font-title);
   font-weight: 800;
-  font-size: calc(var(--u) * 40);
+  font-size: 40;
 }
 
 .comment-input::placeholder {
@@ -723,7 +739,7 @@ h2 {
   border-radius: calc(var(--u) * 50);
   font-family: var(--font-title);
   font-weight: 800;
-  font-size: calc(var(--u) * 55);
+  font-size: 20px;
   line-height: 1;
   transition: background-color 0.15s;
 }
@@ -765,6 +781,297 @@ h2 {
 .vote-input:focus-visible ~ .vote-done {
   outline: 3px solid var(--black-text);
   outline-offset: 3px;
+}
+
+/* ---------- Ratings page ---------- */
+
+/* Blue is the default page color, so this only hides symbols that hang off the bottom */
+.screen--ratings {
+  overflow: clip;
+}
+
+.main--ratings {
+  padding-bottom: 0;
+}
+
+/* Search bar (the label wraps the box so no id is needed) */
+.search {
+  display: block;
+  width: calc(var(--u) * 578);
+  max-width: 100%;
+  margin: calc(var(--u) * 36) auto calc(var(--u) * 104);
+}
+
+.search-input {
+  display: block;
+  width: 100%;
+  height: calc(var(--u) * 88);
+  padding: 0 calc(var(--u) * 33);
+  border: 0;
+  border-radius: calc(var(--u) * 25);
+  background: var(--tertiary);
+  color: var(--black-text);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 40);
+}
+
+.search-input::placeholder {
+  color: var(--button-hover);
+  opacity: 1;
+}
+
+/* One game: cover column on the left, summary on the right */
+.rating {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--u) * 38);
+  min-height: calc(var(--u) * 478);
+  margin-bottom: calc(var(--u) * 50);
+  padding-left: calc(var(--u) * 60);
+}
+
+/* Cover, genre, and score stacked and centered */
+.rating-left {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: center;
+  width: calc(var(--u) * 306);
+}
+
+.rating-cover {
+  display: block;
+  width: 100%;
+  height: calc(var(--u) * 303);
+  border-radius: calc(var(--u) * 50);
+  object-fit: cover;
+  background: var(--secondary-blue); /* shows if an image is missing */
+}
+
+/* nowrap keeps long genres on one line; they stay centered under the cover */
+.rating-genre {
+  margin: calc(var(--u) * 13) 0 0;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 32);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Score number with the star badge beside it */
+.rating-score {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 7);
+}
+
+.rating-number {
+  margin: 0;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 20);
+  line-height: 1.2;
+}
+
+.rating-star {
+  display: block;
+  width: calc(var(--u) * 50);
+  height: calc(var(--u) * 47);
+}
+
+.sum {
+  flex: none;
+  width: calc(var(--u) * 318);
+  margin: 0;
+  color: var(--black-text);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 32);
+  line-height: 1.2;
+}
+
+/* ---------- Social page ---------- */
+
+/* Yellow version of the page and nav bar */
+.screen--social {
+  overflow: clip; /* hides the part of the last symbol cluster that hangs off the bottom */
+  background: var(--yellow-primary);
+}
+
+.nav--social {
+  background: var(--yellow-secondary);
+}
+
+/* Social page has three symbol clusters */
+.cluster--social-1 { top: calc(var(--u) * 291); }
+.cluster--social-2 { top: calc(var(--u) * 948); }
+.cluster--social-3 { top: calc(var(--u) * 1592); }
+
+.main--social {
+  padding-bottom: calc(var(--u) * 87);
+}
+
+/* The list of people: one row (.friend) per person, stacked with space between */
+.friend-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 102);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* One person: avatar, name, the two buttons, then the match circle */
+.friend {
+  display: flex;
+  align-items: center;
+  padding: 0 calc(var(--u) * 23) 0 calc(var(--u) * 47);
+}
+
+.friend-avatar {
+  display: block;
+  flex: none;
+  width: calc(var(--u) * 200);
+  height: calc(var(--u) * 200);
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 4px;
+  box-shadow: 0 0 0 4px var(--black-text);
+}
+
+/* flex: 1 lets the name take all the leftover space between the avatar and the buttons */
+.friend-name {
+  flex: 1;
+  margin: 0 0 0 calc(var(--u) * 12);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 64);
+  line-height: 1.2;
+}
+
+/* Add Friend button sits at the top, Message button at the bottom */
+.friend-actions {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(var(--u) * 121);
+  height: calc(var(--u) * 200);
+}
+
+/* ---------- Add Friend button ---------- */
+
+.add-friend {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: calc(var(--u) * 86);
+  cursor: pointer;
+}
+
+/* The real checkbox is invisible. Clicking the label still checks it. */
+.add-friend-input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Two faces: "idle" is the + sign, "done" is the check mark shown after it is clicked */
+.add-friend-idle,
+.add-friend-done {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--u) * 50);
+  transition: background-color 0.15s;
+}
+
+.add-friend-idle {
+  padding-top: calc(var(--u) * 12);
+  background: var(--tertiary);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 128);
+  line-height: normal;
+}
+
+.add-friend-done {
+  display: none;
+  background: var(--green-primary);
+  font-family: var(--font-button);
+  font-size: calc(var(--u) * 64);
+  line-height: 1;
+}
+
+/* Gray, then green on hover, then green with a check mark once clicked */
+.add-friend:hover .add-friend-idle {
+  background: var(--green-primary);
+}
+
+.add-friend-input:checked ~ .add-friend-idle {
+  display: none;
+}
+
+.add-friend-input:checked ~ .add-friend-done {
+  display: flex;
+}
+
+.add-friend-input:focus-visible ~ .add-friend-idle,
+.add-friend-input:focus-visible ~ .add-friend-done {
+  outline: 3px solid var(--black-text);
+  outline-offset: 3px;
+}
+
+/* ---------- Message button ---------- */
+
+/* Speech bubble shape: round corners everywhere except the bottom left */
+.message-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--u) * 86);
+  padding: 0 0 calc(var(--u) * 46);
+  border: 0;
+  border-radius: calc(var(--u) * 50) calc(var(--u) * 50) calc(var(--u) * 50) 0;
+  background: var(--tertiary);
+  color: var(--black-text);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 64);
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.message-button:hover {
+  background: var(--primary-blue);
+}
+
+/* ---------- Match circle ---------- */
+
+.match {
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: calc(var(--u) * 160);
+  height: calc(var(--u) * 160);
+  margin: 0 0 0 calc(var(--u) * 5);
+  padding: 0 calc(var(--u) * 20);
+  border-radius: 50%;
+  background: var(--tertiary);
+  font-weight: 700;
+  font-size: calc(var(--u) * 48);
+  line-height: 1.2;
+  text-align: center;
+  transition: background-color 0.15s;
+}
+
+.match:hover {
+  background: var(--like-hover);
 }
 
 /* ---------- Focus + motion ---------- */

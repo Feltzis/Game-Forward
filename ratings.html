@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ratings | Game Forward</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&family=LXGW+WenKai+Mono+TC:wght@700&family=Love+Ya+Like+A+Sister&family=Madimi+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Shapes drawn once, then reused: the PlayStation symbols (background) and the star badge (ratings) -->
+  <svg class="symbol-defs">
+    <defs>
+      <symbol id="symbol-cluster" viewBox="0 0 755 640">
+        <g fill="none" stroke="#cdc9fd" stroke-width="30" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M375 22 L470 190 H280 Z"/>
+          <rect x="58.5" y="215.5" width="165" height="165" rx="12"/>
+          <circle cx="599" cy="298" r="95"/>
+        </g>
+        <text x="366.5" y="560" text-anchor="middle" font-family="'Madimi One', sans-serif" font-size="250" fill="#cdc9fd">X</text>
+      </symbol>
+
+      <!-- Gray circle with a blue star in the middle -->
+      <symbol id="symbol-star-badge" viewBox="0 0 50 47">
+        <ellipse cx="25" cy="23.5" rx="25" ry="23.5" fill="#d9d9d9"/>
+        <path d="M25 14.5 L27.6 21.4 L35 21.8 L29.2 26.4 L31.2 33.5 L25 29.4 L18.8 33.5 L20.8 26.4 L15 21.8 L22.4 21.4 Z" fill="#9f96fd"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="phone">
+    <div class="screen screen--ratings">
+
+      <!-- Background symbols: one cluster behind each stretch of the page -->
+      <svg class="cluster cluster--ratings-1"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--ratings-2"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--ratings-3"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--ratings-4"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--ratings-5"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--ratings-6"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--ratings-7"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--ratings-8"><use href="#symbol-cluster"/></svg>
+
+      <header class="site-header">
+        <a class="logo" href="index.html">
+          <img src="assets/swords.png" alt="Game Forward logo: two crossed swords">
+        </a>
+
+        <a class="profile-link" href="profile.html">
+          <span class="visually-hidden">Your profile</span>
+          <svg viewBox="0 0 142 140">
+            <defs>
+              <clipPath id="avatar-clip"><circle cx="71" cy="70" r="68"/></clipPath>
+            </defs>
+            <circle cx="71" cy="70" r="68" fill="#d9d9d9" stroke="#000" stroke-width="2"/>
+            <g clip-path="url(#avatar-clip)" fill="#cdc9fd" stroke="#000" stroke-width="2">
+              <ellipse cx="71.5" cy="45" rx="20.5" ry="25"/>
+              <rect x="40" y="88" width="63" height="60" rx="25"/>
+            </g>
+          </svg>
+        </a>
+
+        <h1>Ratings</h1>
+      </header>
+
+      <main class="main--ratings">
+        <label class="search">
+          <span class="visually-hidden">Search games</span>
+          <input class="search-input" type="text" placeholder="Search">
+        </label>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/red-dead-redemption.png" alt="Red Dead Redemption cover art">
+            <p class="rating-genre">Action-Adventure</p>
+            <div class="rating-score">
+              <p class="rating-number">8.9/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A western-themed action-adventure game.  Red Dead Redemption is set during the decline of the American frontier in the year 1911.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/halo-reach.png" alt="Halo Reach cover art">
+            <p class="rating-genre">First Person Shooter</p>
+            <div class="rating-score">
+              <p class="rating-number">9.5/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2010 first-person shooter video game which takes place in the year 2552, where humanity is locked in a war with an alien theocracy known as the Covenant, which seeks to exterminate humanity.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/borderlands-2.png" alt="Borderlands 2 cover art">
+            <p class="rating-genre">Action Role-Playing FPS</p>
+            <div class="rating-score">
+              <p class="rating-number">9/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2012 action role-playing first-person shooter video game. The story follows a new group of Vault Hunters who must ally with the Crimson Raiders to defeat the tyrannical Handsome Jack.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/fallout-new-vegas.png" alt="Fallout New Vegas cover art">
+            <p class="rating-genre">Action Role-Playing</p>
+            <div class="rating-score">
+              <p class="rating-number">8.5/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2010 action role-playing video game set in the Mojave Desert 204 years after a devastating nuclear war.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/black-ops.png" alt="Call of Duty: Black Ops cover art">
+            <p class="rating-genre">First Person Shooter</p>
+            <div class="rating-score">
+              <p class="rating-number">9/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2010 first-person shooter video game set in the 1960s during the Cold War. It follows CIA operative Alex Mason as he attempts to recall specific memories to stop Soviet sleeper agents from deploying chemical weapons.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/borderlands.png" alt="Borderlands cover art">
+            <p class="rating-genre">Action Role-Playing FPS</p>
+            <div class="rating-score">
+              <p class="rating-number">8/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2009 action role-playing first-person shooter video game. The story follows a group of Vault Hunters who travel to Pandora to search for the “Vault” which is rumored to contain advanced alien technology and other riches.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/skyrim.png" alt="Skyrim cover art">
+            <p class="rating-genre">Action Role-Playing</p>
+            <div class="rating-score">
+              <p class="rating-number">8.4/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2011 action role-playing game set 201 years after the events of Oblivion. Its main story focuses on the Last Dragonborn, on their quest to defeat Alduin the World-Eater, a dragon prophesied to destroy the world.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/halo-3.png" alt="Halo 3 cover art">
+            <p class="rating-genre">First Person Shooter</p>
+            <div class="rating-score">
+              <p class="rating-number">9.5/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2007 first-person shooter video game. The story centers on the interstellar war between 26th-century humanity, a collection of alien races known as the Covenant, and the alien parasite known as the Flood.</p>
+        </article>
+
+        <article class="rating">
+          <div class="rating-left">
+            <img class="rating-cover" src="assets/gears-of-war.png" alt="Gears of War cover art">
+            <p class="rating-genre">Third-Person Shooter</p>
+            <div class="rating-score">
+              <p class="rating-number">9/10</p>
+              <svg class="rating-star"><use href="#symbol-star-badge"/></svg>
+            </div>
+          </div>
+          <p class="sum">A 2006 third-person shooter video game. The main story focuses on a squad of troops who assist in completing a desperate, last-ditch attempt to end a war against a genocidal subterranean enemy, the Locust, and save the remaining human inhabitants of their planet Sera.</p>
+        </article>
+      </main>
+
+      <nav class="nav">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="ratings.html">Ratings</a></li>
+          <li><a href="social.html">Social</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>
