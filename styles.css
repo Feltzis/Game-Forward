@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Game Forward - Home, About, and Profile pages
+   Game Forward - Home, About, Profile, and Feed pages
    Built from the Figma frames (755px wide designs).
    All sizes use --u, which equals 1 design pixel scaled to the phone width,
    so the layout matches the mockup at any screen size.
@@ -28,6 +28,12 @@
   --red-primary: #ae5267;
   --red-secondary: #fdbccb;
   --white-text: #d9d9d9;
+
+  /* Feed page colors */
+  --green-primary: #93e99d;
+  --green-secondary: #cafdd0;
+  --like-hover: #c7fc9f;
+  --dislike-hover: #ae5267;
 
   --font-title: "Life Savers", Georgia, serif;
   --font-body: "LXGW WenKai Mono TC", "Courier New", monospace;
@@ -127,6 +133,17 @@ body {
 .cluster--profile-2 { top: calc(var(--u) * 948); }
 .cluster--profile-3 { top: calc(var(--u) * 1592); }
 .cluster--profile-4 { top: calc(var(--u) * 2294); }
+
+/* Feed page has nine symbol clusters (the last one is cut off by the screen) */
+.cluster--feed-1 { top: calc(var(--u) * 291); }
+.cluster--feed-2 { top: calc(var(--u) * 948); }
+.cluster--feed-3 { top: calc(var(--u) * 1592); }
+.cluster--feed-4 { top: calc(var(--u) * 2243); }
+.cluster--feed-5 { top: calc(var(--u) * 2900); }
+.cluster--feed-6 { top: calc(var(--u) * 3544); }
+.cluster--feed-7 { top: calc(var(--u) * 4186); }
+.cluster--feed-8 { top: calc(var(--u) * 4843); }
+.cluster--feed-9 { top: calc(var(--u) * 5487); }
 
 /* ---------- Header ---------- */
 
@@ -284,10 +301,6 @@ h2 {
   margin: calc(var(--u) * 55) 0 0;
   padding: 0 calc(var(--u) * 33) 0 calc(var(--u) * 26);
   list-style: none;
-}
-
-.cover {
-  height: calc(var(--u) * 365);
 }
 
 .cover--rdr2 { width: calc(var(--u) * 302); }
@@ -574,6 +587,184 @@ h2 {
 .game a:hover .game-hover,
 .game a:focus-visible .game-hover {
   opacity: 1;
+}
+
+/* ---------- Feed page ---------- */
+
+/* Green version of the page and nav bar */
+.screen--feed {
+  overflow: clip; /* hides the part of the last symbol cluster that hangs off the bottom */
+  background: var(--green-primary);
+}
+
+.nav--feed {
+  background: var(--green-secondary);
+}
+
+.main--feed {
+  padding-top: calc(var(--u) * 11);
+  padding-bottom: calc(var(--u) * 82);
+}
+
+/* One game review: cover, review text, then the row of avatar, comment box, and votes */
+.post {
+  margin-top: calc(var(--u) * 40);
+}
+
+/* Game covers alternate between a wider and a narrower size */
+.cover {
+  display: block;
+  height: 0 auto;
+  margin: 0 auto;
+  border-radius: calc(var(--u) * 25);
+  object-fit: cover;
+  background: var(--green-secondary); /* shows if an image is missing */
+}
+
+.cover-wide   { width: calc(var(--u) * 436); }
+.cover-narrow { width: calc(var(--u) * 413); }
+
+.review {
+  width: calc(var(--u) * 596);
+  max-width: 100%;
+  margin: calc(var(--u) * 21) auto 0;
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 20);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Row: avatar on the left, comment box in the middle, like and dislike on the right */
+.reaction {
+  display: flex;
+  align-items: flex-start;
+  margin-top: calc(var(--u) * 5);
+  padding: 0 calc(var(--u) * 66);
+}
+
+.poster {
+  display: block;
+  flex: none;
+  width: calc(var(--u) * 105);
+  color: var(--black-text);
+  text-align: center;
+  text-decoration: none;
+}
+
+.poster-avatar {
+  display: block;
+  width: calc(var(--u) * 105);
+  height: calc(var(--u) * 105);
+  border-radius: 50%;
+}
+
+.poster-name {
+  display: block;
+  margin-top: calc(var(--u) * 4);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 24);
+  line-height: 1.2;
+}
+
+.comment-input {
+  display: block;
+  flex: none;
+  width: calc(var(--u) * 390);
+  height: calc(var(--u) * 114);
+  margin: calc(var(--u) * 13) 0 0 calc(var(--u) * 39);
+  padding: 0 calc(var(--u) * 18);
+  border: 0;
+  border-radius: calc(var(--u) * 25);
+  background: var(--tertiary);
+  color: var(--black-text);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 40);
+}
+
+.comment-input::placeholder {
+  color: var(--button-hover);
+  opacity: 1;
+}
+
+/* ---------- Like and dislike buttons ---------- */
+
+.votes {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 19);
+  margin: calc(var(--u) * 13) 0 0 calc(var(--u) * 19);
+}
+
+.vote {
+  display: block;
+  position: relative;
+  width: calc(var(--u) * 70);
+  height: calc(var(--u) * 47);
+  cursor: pointer;
+}
+
+/* The real radio button is invisible. Clicking the label still selects it. */
+.vote-input {
+  position: absolute;
+  opacity: 0;
+}
+
+/* Two faces for each button: "idle" is the + or -, "done" shows after it is clicked */
+.vote-idle,
+.vote-done {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--u) * 50);
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-size: calc(var(--u) * 55);
+  line-height: 1;
+  transition: background-color 0.15s;
+}
+
+.vote-idle {
+  background: var(--tertiary);
+}
+
+.vote-done {
+  display: none;
+}
+
+.vote-input:checked ~ .vote-idle {
+  display: none;
+}
+
+.vote-input:checked ~ .vote-done {
+  display: flex;
+}
+
+/* Like button: gray, then green on hover, then a check mark once clicked */
+.vote-like:hover .vote-idle,
+.vote-like .vote-done {
+  background: var(--like-hover);
+}
+
+.vote-like .vote-done {
+  font-family: var(--font-button);
+  font-weight: 400;
+}
+
+/* Dislike button: gray, then red on hover, then an x once clicked */
+.vote-dislike:hover .vote-idle,
+.vote-dislike .vote-done {
+  background: var(--dislike-hover);
+}
+
+.vote-input:focus-visible ~ .vote-idle,
+.vote-input:focus-visible ~ .vote-done {
+  outline: 3px solid var(--black-text);
+  outline-offset: 3px;
 }
 
 /* ---------- Focus + motion ---------- */

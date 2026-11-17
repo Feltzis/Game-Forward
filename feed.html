@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feed | Game Forward</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Life+Savers:wght@400;700;800&family=LXGW+WenKai+Mono+TC:wght@700&family=Love+Ya+Like+A+Sister&family=Madimi+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- PlayStation symbols (triangle, square, circle, X) drawn once, then reused as the background -->
+  <svg class="symbol-defs">
+    <defs>
+      <symbol id="symbol-cluster" viewBox="0 0 755 640">
+        <g fill="none" stroke="#cafdd0" stroke-width="30" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M375 22 L470 190 H280 Z"/>
+          <rect x="58.5" y="215.5" width="165" height="165" rx="12"/>
+          <circle cx="599" cy="298" r="95"/>
+        </g>
+        <text x="366.5" y="560" text-anchor="middle" font-family="'Madimi One', sans-serif" font-size="250" fill="#cafdd0">X</text>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="phone">
+    <div class="screen screen--feed">
+
+      <!-- Background symbols: one cluster behind each stretch of the feed -->
+      <svg class="cluster cluster--feed-1"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-2"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-3"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-4"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-5"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-6"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-7"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-8"><use href="#symbol-cluster"/></svg>
+      <svg class="cluster cluster--feed-9"><use href="#symbol-cluster"/></svg>
+
+      <header class="site-header">
+        <a class="logo" href="index.html">
+          <img src="assets/swords.png" alt="Game Forward logo: two crossed swords">
+        </a>
+
+        <a class="profile-link" href="profile.html">
+          <span class="visually-hidden">Your profile</span>
+          <svg viewBox="0 0 142 140">
+            <defs>
+              <clipPath id="avatar-clip"><circle cx="71" cy="70" r="68"/></clipPath>
+            </defs>
+            <circle cx="71" cy="70" r="68" fill="#d9d9d9" stroke="#000" stroke-width="2"/>
+            <g clip-path="url(#avatar-clip)" fill="#93e99d" stroke="#000" stroke-width="2">
+              <ellipse cx="71.5" cy="45" rx="20.5" ry="25"/>
+              <rect x="40" y="88" width="63" height="60" rx="25"/>
+            </g>
+          </svg>
+        </a>
+
+        <h1>Feed</h1>
+      </header>
+
+      <main class="main--feed">
+
+        <article class="post">
+          <img class="cover cover-wide" src="assets/red-dead-redemption-2.png" alt="Red Dead Redemption 2 cover art">
+          <p class="review">What a masterpiece! The graphics are beautiful, the gameplay is so engaging, and the characters are amazing! A perfect prequel to Red Dead Redemption. 10/10</p>
+
+          <form class="reaction" action="#" method="post">
+            <a class="poster" href="social.html">
+              <img class="poster-avatar" src="assets/illustration-pc.png" alt="Mac's profile picture">
+              <span class="poster-name">Mac</span>
+            </a>
+
+            <input class="comment-input" type="text" name="comment" placeholder="Comments...">
+
+            <div class="votes">
+              <label class="vote vote-like">
+                <input class="vote-input" type="radio" name="vote-1" value="like">
+                <span class="vote-idle">+</span>
+                <span class="vote-done">✓</span>
+              </label>
+              <label class="vote vote-dislike">
+                <input class="vote-input" type="radio" name="vote-1" value="dislike">
+                <span class="vote-idle">-</span>
+                <span class="vote-done">x</span>
+              </label>
+            </div>
+          </form>
+        </article>
+
+        <article class="post">
+          <img class="cover cover-narrow" src="assets/assassins-creed-odyssey.png" alt="Assassin's Creed Odyssey cover art">
+          <p class="review">I feel like after Origins the Assassin’s Creed franchise sort of fell off. The graphics are great and it is fun to explore the history of Greece, however the gameplay becomes very dull and repetitive, hard for me to even finish the game. 6/10</p>
+
+          <form class="reaction" action="#" method="post">
+            <a class="poster" href="social.html">
+              <img class="poster-avatar" src="assets/illustration-gamingconsole.png" alt="Game's profile picture">
+              <span class="poster-name">Game</span>
+            </a>
+
+            <input class="comment-input" type="text" name="comment" placeholder="Comments...">
+
+            <div class="votes">
+              <label class="vote vote-like">
+                <input class="vote-input" type="radio" name="vote-2" value="like">
+                <span class="vote-idle">+</span>
+                <span class="vote-done">✓</span>
+              </label>
+              <label class="vote vote-dislike">
+                <input class="vote-input" type="radio" name="vote-2" value="dislike">
+                <span class="vote-idle">-</span>
+                <span class="vote-done">x</span>
+              </label>
+            </div>
+          </form>
+        </article>
+
+        <article class="post">
+          <img class="cover cover-wide" src="assets/fallout-4.png" alt="Fallout 4 cover art">
+          <p class="review">This game is so addicting, it is so hard to put the controller down! I have replayed the storyline at least 5 different times, picking different factions to side with each time. 9/10</p>
+
+          <form class="reaction" action="#" method="post">
+            <a class="poster" href="social.html">
+              <img class="poster-avatar" src="assets/illustration-burger.png" alt="Burg's profile picture">
+              <span class="poster-name">Burg</span>
+            </a>
+
+            <input class="comment-input" type="text" name="comment" placeholder="Comments...">
+
+            <div class="votes">
+              <label class="vote vote-like">
+                <input class="vote-input" type="radio" name="vote-3" value="like">
+                <span class="vote-idle">+</span>
+                <span class="vote-done">✓</span>
+              </label>
+              <label class="vote vote-dislike">
+                <input class="vote-input" type="radio" name="vote-3" value="dislike">
+                <span class="vote-idle">-</span>
+                <span class="vote-done">x</span>
+              </label>
+            </div>
+          </form>
+        </article>
+
+        <article class="post">
+          <img class="cover cover-narrow" src="assets/mw3.png" alt="Call of Duty: Modern Warfare 3 cover art">
+          <p class="review">MW3 is a masterpiece in the COD gaming series! The campaign is intense and the multiplayer is very enjoyable with friends. 8/10</p>
+
+          <form class="reaction" action="#" method="post">
+            <a class="poster" href="social.html">
+              <img class="poster-avatar" src="assets/illustration-pumpkin.png" alt="Jack's profile picture">
+              <span class="poster-name">Jack</span>
+            </a>
+
+            <input class="comment-input" type="text" name="comment" placeholder="Comments...">
+
+            <div class="votes">
+              <label class="vote vote-like">
+                <input class="vote-input" type="radio" name="vote-4" value="like">
+                <span class="vote-idle">+</span>
+                <span class="vote-done">✓</span>
+              </label>
+              <label class="vote vote-dislike">
+                <input class="vote-input" type="radio" name="vote-4" value="dislike">
+                <span class="vote-idle">-</span>
+                <span class="vote-done">x</span>
+              </label>
+            </div>
+          </form>
+        </article>
+
+        <article class="post">
+          <img class="cover cover-wide" src="assets/borderlands-4.png" alt="Borderlands 4 cover art">
+          <p class="review">What a waste of money. I have been a long time Borderlands fan and I am very disappointed with this game. The gameplay is boring and repetitive, I was only able to stomach 4 hours of gameplay. 3/10</p>
+
+          <form class="reaction" action="#" method="post">
+            <a class="poster" href="social.html">
+              <img class="poster-avatar" src="assets/illustration-retro-tv.png" alt="TV's profile picture">
+              <span class="poster-name">TV</span>
+            </a>
+
+            <input class="comment-input" type="text" name="comment" placeholder="Comments...">
+
+            <div class="votes">
+              <label class="vote vote-like">
+                <input class="vote-input" type="radio" name="vote-5" value="like">
+                <span class="vote-idle">+</span>
+                <span class="vote-done">✓</span>
+              </label>
+              <label class="vote vote-dislike">
+                <input class="vote-input" type="radio" name="vote-5" value="dislike">
+                <span class="vote-idle">-</span>
+                <span class="vote-done">x</span>
+              </label>
+            </div>
+          </form>
+        </article>
+
+        <article class="post">
+          <img class="cover cover-narrow" src="assets/fallout-3.png" alt="Fallout 3 cover art">
+          <p class="review">One of my most favorite Fallout games! The beginning is super cool where you witness the main character grow up in the vault. Exploring DC post nuclear war was very exciting, the monuments and buildings were very accurate. 8/10</p>
+
+          <form class="reaction" action="#" method="post">
+            <a class="poster" href="social.html">
+              <img class="poster-avatar" src="assets/illustration-pc.png" alt="Mac's profile picture">
+              <span class="poster-name">Mac</span>
+            </a>
+
+            <input class="comment-input" type="text" name="comment" placeholder="Comments...">
+
+            <div class="votes">
+              <label class="vote vote-like">
+                <input class="vote-input" type="radio" name="vote-6" value="like">
+                <span class="vote-idle">+</span>
+                <span class="vote-done">✓</span>
+              </label>
+              <label class="vote vote-dislike">
+                <input class="vote-input" type="radio" name="vote-6" value="dislike">
+                <span class="vote-idle">-</span>
+                <span class="vote-done">x</span>
+              </label>
+            </div>
+          </form>
+        </article>
+
+      </main>
+
+      <nav class="nav nav--feed">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feed.html">Feed</a></li>
+          <li><a href="ratings.html">Ratings</a></li>
+          <li><a href="social.html">Social</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>
