@@ -56,6 +56,7 @@ body {
   display: flex;
   justify-content: center;
   background: var(--page-bg);
+  background-image: url("assets/playstation-pattern.webp");
   color: var(--black-text);
   font-family: var(--font-body);
 }
@@ -176,6 +177,13 @@ body {
   width: 100%;
   height: auto;
 }
+
+/* Hover: a soft white glow appears behind the swords (the "Variant2" state in Figma) */
+.logo:hover,
+.logo:focus-visible {
+  background: radial-gradient(ellipse closest-side at 50% 50%, rgba(255, 255, 255, 1.0), rgba(255, 255, 255, 0));
+}
+
 
 .profile-link {
   position: absolute;
